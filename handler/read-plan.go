@@ -8,7 +8,6 @@ import (
 func (tph *TravelHandler) GetTravelPlansHandler(w http.ResponseWriter, r *http.Request) {
 	id := library.GetID(w, r)
 
-	// Panggil fungsi GetPlansByTravelID
 	plans, err := tph.travelService.GetPlansByTravelID(id)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)

@@ -32,6 +32,7 @@ func main() {
 	r.Get("/travel/{id}", TravelHandler.GetTravelByIDHandler)
 	r.Post("/travel/{id}", TransactionHandler.CreateTransactionHandler)
 	r.Get("/travel/{id}/plans", TravelHandler.GetTravelPlansHandler)
+	r.Get("/travel/{id}/locations", TravelHandler.GetLocationByTravelID)
 
 	r.Handle("/assets/*", http.StripPrefix("/assets/", http.FileServer(http.Dir("assets"))))
 
